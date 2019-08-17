@@ -78,7 +78,7 @@ int LeetFunc::lengthOfLongestSubstring(std::string s)
             curIndex = std::max(curIndex, iter->second);
         }
         map[word] = i;
-        maxSize = std::max(maxSize,i - curIndex);
+        maxSize = std::max(maxSize, i - curIndex);
     }
     return maxSize;
 }
@@ -317,7 +317,7 @@ std::vector<std::string> LeetFunc::letterCombinations(std::string digits)
 std::vector<std::vector<int>> LeetFunc::fourSum(std::vector<int>& nums, int target)
 {
     std::vector<std::vector<int>> ans
-;
+        ;
     if (nums.size() < 4)return ans;
 
     std::sort(nums.begin(), nums.end());
@@ -325,10 +325,10 @@ std::vector<std::vector<int>> LeetFunc::fourSum(std::vector<int>& nums, int targ
     {
         for (int j = i + 1; j < nums.size() - 2; j++)
         {
-            int tarValue = target -(nums[i] + nums[j]);
+            int tarValue = target - (nums[i] + nums[j]);
 
             int s = j + 1, e = nums.size() - 1;
-            while (s<e)
+            while (s < e)
             {
                 int sum = nums[s] + nums[e];
                 if (sum < tarValue)s++;
@@ -482,7 +482,7 @@ ListNode* LeetFunc::mergeKLists(std::vector<ListNode*>& lists)
 {
     if (lists.empty()) return nullptr;
     int Size = lists.size();
-    while (Size>1)
+    while (Size > 1)
     {
         for (int i = 0; i < Size / 2; i++)
         {
@@ -511,7 +511,7 @@ ListNode* LeetFunc::reverseKGroup(ListNode* head, int k)
 
     int num = 0;
     while (cur = cur->next)num++;
-    while (num>=k)
+    while (num >= k)
     {
         cur = pre->next;
         nex = cur->next;
@@ -535,7 +535,7 @@ int LeetFunc::longestValidParentheses(std::string s)
     for (int i = 0; i < s.size(); i++)
     {
         if (s[i] == '(')st.push(i);
-        else if(s[i] == ')')
+        else if (s[i] == ')')
         {
             st.pop();
             if (st.empty())st.push(i);
@@ -556,14 +556,14 @@ int LeetFunc::search(std::vector<int>& nums, int target)
         //l     m     r
         if (nums[l] > nums[mid])
         {
-            if (nums[mid] < target && nums[r]>= target)l = mid + 1;
+            if (nums[mid] < target && nums[r] >= target)l = mid + 1;
             else r = mid - 1;
         }
         //4 5 6 7 1 2 3
         //l     m     r
-        else if(nums[mid] > nums[r])
+        else if (nums[mid] > nums[r])
         {
-            if (nums[mid] > target && nums[l]<= target)r = mid - 1;
+            if (nums[mid] > target && nums[l] <= target)r = mid - 1;
             else l = mid + 1;
         }
         //4 5 6 7 8 1 2 3
@@ -578,12 +578,12 @@ int LeetFunc::search(std::vector<int>& nums, int target)
 }
 std::vector<int> LeetFunc::searchRange(std::vector<int>& nums, int target)
 {
-    std::vector<int> ans{-1,-1};
+    std::vector<int> ans{ -1,-1 };
     if (nums.size() <= 0)return ans;
 
     int s = 0, e = nums.size() - 1;
     int l, mid, r;
-    while (s<e)
+    while (s < e)
     {
         mid = (s + e) / 2;
         if (nums[mid] < target)s = mid + 1;
@@ -591,7 +591,7 @@ std::vector<int> LeetFunc::searchRange(std::vector<int>& nums, int target)
     }
     if (nums[s] != target)return ans;
     else ans[0] = s;
-    
+
     e = nums.size() - 1;
     while (s < e)
     {
@@ -679,7 +679,7 @@ void LeetFunc::solveSudoku(std::vector<std::vector<char>>& board)
     solveSudoku(board, 0, 0);
 }
 
-void LeetFunc::combinationSum(std::vector<int>& candidates, int target, std::vector<std::vector<int>>& vvans, std::vector<int>& vsum,int left)
+void LeetFunc::combinationSum(std::vector<int>& candidates, int target, std::vector<std::vector<int>>& vvans, std::vector<int>& vsum, int left)
 {
     if (target == 0)
     {
@@ -714,7 +714,7 @@ void LeetFunc::combinationSum2(std::vector<int>& candidates, int target, std::ve
 
     for (int i = left; i < candidates.size() && target >= candidates[i]; i++)
     {
-        if (i && candidates[i] == candidates[i - 1] && i>left)continue;
+        if (i && candidates[i] == candidates[i - 1] && i > left)continue;
         vsum.push_back(candidates[i]);
         combinationSum2(candidates, target - candidates[i], vvans, vsum, i + 1);
         vsum.pop_back();
@@ -772,19 +772,19 @@ bool LeetFunc::isMatch(std::string s, std::string p)
 {
     int size_s = s.size(), size_p = p.size();
     int i = 0, j = 0, p_restart = -1, s_match;
-    while (i<size_s)
+    while (i < size_s)
     {
         if (j < size_p && p[j] == '*')
         {
             s_match = i;
             p_restart = j++;
         }
-        else if (j<size_p && (s[i] == p[j] || p[j] == '?'))
+        else if (j < size_p && (s[i] == p[j] || p[j] == '?'))
         {
             i++;
             j++;
         }
-        else if (p_restart >=0)
+        else if (p_restart >= 0)
         {
             s_match++;
             i = s_match;
@@ -888,7 +888,7 @@ std::vector<std::vector<std::string>> LeetFunc::groupAnagrams(std::vector<std::s
         std::sort(curStr.begin(), curStr.end());
         map[curStr].push_back(str);
     }
-    
+
     for (auto &id : map)
     {
         vv_ans.push_back(id.second);
@@ -937,10 +937,10 @@ std::vector<std::vector<int>> LeetFunc::merge(std::vector<std::vector<int>>& int
     std::vector<std::vector<int>> vvans;
     std::sort(intervals.begin(), intervals.end());
 
-    for(std::vector<int> &vcur : intervals)
+    for (std::vector<int> &vcur : intervals)
     {
         bool isMerged = false;
-        for(std::vector<int> &vans : vvans)
+        for (std::vector<int> &vans : vvans)
         {
             if (vcur[0] > vans[1] || vcur[1] < vans[0])continue;
             else
@@ -976,7 +976,6 @@ std::vector<std::vector<int>> LeetFunc::insert(std::vector<std::vector<int>>& in
         intervals.erase(itr1, itr2);
     }
     return intervals;
-
 }
 
 void LeetFunc::getPermutation(std::string & s_input, std::string & s_ans, int index, int target)
@@ -1005,10 +1004,25 @@ std::string LeetFunc::getPermutation(int n, int k)
     std::stringstream ss;
     while (num <= n)
         ss << num++;
-        
+
     s_input = ss.str();
     int count = 0;
     getPermutation(s_input, s_ans, 0, k);
 
     return s_ans;
+}
+
+int LeetFunc::uniquePaths(int m, int n)
+{
+    if (m < 1 || n < 1)return 0;
+
+    std::vector<std::vector<int>> vv_ans(m, std::vector<int>(n, 1));
+    for (int i = 1; i < m; i++)
+    {
+        for (int j = 1; j < n; j++)
+        {
+            vv_ans[i][j] = vv_ans[i - 1][j] + vv_ans[i][j - 1];
+        }
+    }
+    return vv_ans[m - 1][n - 1];
 }

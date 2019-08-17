@@ -16,11 +16,11 @@ struct ListNode {
 class LeetFunc
 {
 public:
-	LeetFunc();
-	~LeetFunc();
+    LeetFunc();
+    ~LeetFunc();
 
-	//No.1
-	std::vector<int> twoSum(std::vector<int>& nums, int target);
+    //No.1
+    std::vector<int> twoSum(std::vector<int>& nums, int target);
     //No.2
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
     //No.3
@@ -72,14 +72,14 @@ public:
     //No.36
     bool isValidSudoku(std::vector<std::vector<char>>& board);
     //No.37
-    bool isValid(std::vector<std::vector<char>>& board, int row, int col,char value);
+    bool isValid(std::vector<std::vector<char>>& board, int row, int col, char value);
     bool solveSudoku(std::vector<std::vector<char>>& board, int row, int col);
     void solveSudoku(std::vector<std::vector<char>>& board);
     //No.39
-    void combinationSum(std::vector<int>& candidates, int target, std::vector<std::vector<int>> &ans, std::vector<int> &sum,int left);
+    void combinationSum(std::vector<int>& candidates, int target, std::vector<std::vector<int>> &ans, std::vector<int> &sum, int left);
     std::vector<std::vector<int>> combinationSum(std::vector<int>& candidates, int target);
     //No.40
-    void combinationSum2(std::vector<int>& candidates, int target, std::vector<std::vector<int>> &vvans, std::vector<int> &vsum,int left);
+    void combinationSum2(std::vector<int>& candidates, int target, std::vector<std::vector<int>> &vvans, std::vector<int> &vsum, int left);
     std::vector<std::vector<int>> combinationSum2(std::vector<int>& candidates, int target);
     //No.41
     int firstMissingPositive(std::vector<int>& nums);
@@ -109,8 +109,10 @@ public:
     std::vector<std::vector<int>> insert(std::vector<std::vector<int>>& intervals, std::vector<int>& newInterval);
     //No.60
     int m_count;
-    void getPermutation(std::string &s_input,std::string &s_ans, int index, int target);
+    void getPermutation(std::string &s_input, std::string &s_ans, int index, int target);
     std::string getPermutation(int n, int k);
+    //No.62
+    int uniquePaths(int m, int n);
 private:
     std::vector<std::string> result;
 };
