@@ -1,4 +1,4 @@
-project(MIKE_CHANG)
+﻿project(MIKE_CHANG)
 cmake_minimum_required(VERSION 3.2)
 Add_Definitions(-DUNICODE -D_UNICODE)
 add_definitions("/wd4996")
