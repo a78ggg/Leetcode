@@ -113,6 +113,8 @@ public:
     std::string getPermutation(int n, int k);
     //No.62
     int uniquePaths(int m, int n);
+    //No.63
+    int uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGrid);
 private:
     std::vector<std::string> result;
 };

@@ -1026,3 +1026,22 @@ int LeetFunc::uniquePaths(int m, int n)
     }
     return vv_ans[m - 1][n - 1];
 }
+
+int LeetFunc::uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGrid)
+{
+    int m = obstacleGrid.size(), n = obstacleGrid[0].size();
+    std::vector<std::vector<long long>> vv_ans(m + 1, std::vector<long long>(n + 1, 0));
+    vv_ans[0][1] = 1;
+
+    for (int i = 1; i <= m; i++)
+    {
+        for (int j = 1; j <= n; j++)
+        {
+            if (!obstacleGrid[i-1][j-1])
+            {
+                vv_ans[i][j] = vv_ans[i - 1][j] + vv_ans[i][j - 1];
+            }
+        }
+    }
+    return vv_ans[m][n];
+}
