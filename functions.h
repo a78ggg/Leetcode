@@ -115,6 +115,8 @@ public:
     int uniquePaths(int m, int n);
     //No.63
     int uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGrid);
+    //No.64
+    int minPathSum(std::vector<std::vector<int>>& grid);
 private:
     std::vector<std::string> result;
 };

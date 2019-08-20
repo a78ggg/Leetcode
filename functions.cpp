@@ -1045,3 +1045,25 @@ int LeetFunc::uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGr
     }
     return vv_ans[m][n];
 }
+
+int LeetFunc::minPathSum(std::vector<std::vector<int>>& grid)
+{
+    int m = grid.size();
+    int n = grid[0].size();
+    for (int i = 1; i < n; i++)
+    {
+        grid[0][i] += grid[0][i - 1];
+    }
+    for (int j = 1; j < m; j++)
+    {
+        grid[j][0] += grid[j - 1][0];
+    }
+    for (int i = 1; i < m; i++)
+    {
+        for (int j = 1; j < n; j++)
+        {
+            grid[i][j] = grid[i][j] + std::min(grid[i][j - 1], grid[i - 1][j]);
+        }
+    }
+    return grid[m - 1][n - 1];
+}
