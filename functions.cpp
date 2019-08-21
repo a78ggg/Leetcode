@@ -1067,3 +1067,17 @@ int LeetFunc::minPathSum(std::vector<std::vector<int>>& grid)
     }
     return grid[m - 1][n - 1];
 }
+
+std::string LeetFunc::addBinary(std::string a, std::string b)
+{
+    int m = a.size() - 1, n = b.size() - 1, sum = 0;
+    std::string ans;
+
+    while (sum > 0 || m >= 0 || n >= 0)
+    {
+        sum += (m >= 0 ? a[m--] - '0' : 0) + (n >= 0 ? b[n--] - '0' : 0);
+        ans = char(sum % 2 + '0') + ans;
+        sum /= 2;
+    }
+    return ans;
+}

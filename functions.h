@@ -117,6 +117,8 @@ public:
     int uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGrid);
     //No.64
     int minPathSum(std::vector<std::vector<int>>& grid);
+    //No.67
+    std::string addBinary(std::string a, std::string b);
 private:
     std::vector<std::string> result;
 };
