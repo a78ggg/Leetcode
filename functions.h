@@ -119,6 +119,8 @@ public:
     int minPathSum(std::vector<std::vector<int>>& grid);
     //No.67
     std::string addBinary(std::string a, std::string b);
+    //No.70
+    int climbStairs(int n);
 private:
     std::vector<std::string> result;
 };

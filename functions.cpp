@@ -1081,3 +1081,19 @@ std::string LeetFunc::addBinary(std::string a, std::string b)
     }
     return ans;
 }
+
+int LeetFunc::climbStairs(int n)
+{
+    std::vector<int> v_ans(n, 0);
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    if (n == 2) return 2;
+
+    v_ans[0] = 1;
+    v_ans[1] = 2;
+    for (int i = 2; i < n; i++)
+    {
+        v_ans[i] = v_ans[i - 1] + v_ans[i - 2];
+    }
+    return v_ans[n - 1];
+}
