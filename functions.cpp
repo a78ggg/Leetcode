@@ -1097,3 +1097,36 @@ int LeetFunc::climbStairs(int n)
     }
     return v_ans[n - 1];
 }
+
+int LeetFunc::minDistance(std::string word1, std::string word2)
+{
+    /* Edit Distance
+     * 解說:https://www.ptt.cc/bbs/Grad-ProbAsk/M.1470239320.A.268.html
+     */
+    int m = word1.size();
+    int n = word2.size();
+
+    std::vector<std::vector<int>> vv_dpans(m + 1, std::vector<int>(n + 1, 0));
+    for (int i = 1; i <= m; i++)
+    {
+        vv_dpans[i][0] = i;
+    }
+    for (int j = 0; j <= n; j++)
+    {
+        vv_dpans[0][j] = j;
+    }
+
+    for (int i = 1; i <= m; i++)
+    {
+        for (int j = 1; j <= n; j++)
+        {
+            if (word1[i - 1] == word2[j - 1])
+                vv_dpans[i][j] = vv_dpans[i - 1][j - 1];
+            else
+                vv_dpans[i][j] = std::min(vv_dpans[i - 1][j - 1], std::min(vv_dpans[i][j - 1], vv_dpans[i - 1][j])) + 1;
+        }
+    }
+    return vv_dpans[m][n];
+
+    return 0;
+}

@@ -121,6 +121,8 @@ public:
     std::string addBinary(std::string a, std::string b);
     //No.70
     int climbStairs(int n);
+    //No.72
+    int minDistance(std::string word1, std::string word2);
 private:
     std::vector<std::string> result;
 };
