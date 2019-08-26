@@ -123,6 +123,8 @@ public:
     int climbStairs(int n);
     //No.72
     int minDistance(std::string word1, std::string word2);
+    //No.73
+    void setZeroes(std::vector<std::vector<int>>& matrix);
 private:
     std::vector<std::string> result;
 };

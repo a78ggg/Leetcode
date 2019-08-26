@@ -10,14 +10,10 @@ int main()
     //test.longestPalindrome(str);
     //test.uniquePaths(19, 13);
 
-    //std::vector<int> a{ 1,3,1 };
-    //std::vector<int> b{ 1,5,1 };
-    //std::vector<int> c{ 4,2,1 };
-    //std::vector<std::vector<int>> vv;
-    //vv.push_back(a); vv.push_back(b); vv.push_back(c);
-    //test.minPathSum(vv);
-
-    std::string a = "11";
-    std::string b = "1";
-    test.addBinary(a, b);
+    std::vector<int> a{ 0,1,1,0 };
+    std::vector<int> b{ 1,1,1,1 };
+    std::vector<int> c{ 1,1,1,1 };
+    std::vector<std::vector<int>> vv;
+    vv.push_back(a); vv.push_back(b); vv.push_back(c);
+    test.setZeroes(vv);
 }
