@@ -125,6 +125,8 @@ public:
     int minDistance(std::string word1, std::string word2);
     //No.73
     void setZeroes(std::vector<std::vector<int>>& matrix);
+    //No.74
+    bool searchMatrix(std::vector<std::vector<int>>& matrix, int target);
 private:
     std::vector<std::string> result;
 };

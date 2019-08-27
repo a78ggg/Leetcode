@@ -1158,3 +1158,23 @@ void LeetFunc::setZeroes(std::vector<std::vector<int>>& matrix)
             matrix[i][0] = 0;
     }
 }
+
+bool LeetFunc::searchMatrix(std::vector<std::vector<int>>& matrix, int target)
+{
+    for (int i = 0; i < matrix.size(); i++)
+    {
+        if (matrix[i].size() == 0)continue;
+        if (matrix[i].front() > target)return false;
+
+        int col_l = 0, col_r = matrix[i].size() - 1, col_mid;
+        while (col_l <= col_r)
+        {
+            col_mid = (col_l + col_r) / 2;
+            int value = matrix[i][col_mid];
+            if (value == target)return true;
+            else if (value < target)col_l = col_mid + 1;
+            else col_r = col_mid - 1;
+        }
+    }
+    return false;
+}
