@@ -1178,3 +1178,18 @@ bool LeetFunc::searchMatrix(std::vector<std::vector<int>>& matrix, int target)
     }
     return false;
 }
+
+void LeetFunc::sortColors(std::vector<int>& nums)
+{
+    int left = 0, right = nums.size() - 1;
+    int i = 0;
+    while (i <= right)
+    {
+        if (nums[i] == 0)
+            std::swap(nums[i++], nums[left++]);
+        else if (nums[i] == 2)
+            std::swap(nums[i], nums[right--]);
+        else
+            i++;
+    }
+}

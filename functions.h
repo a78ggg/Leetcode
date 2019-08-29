@@ -127,6 +127,8 @@ public:
     void setZeroes(std::vector<std::vector<int>>& matrix);
     //No.74
     bool searchMatrix(std::vector<std::vector<int>>& matrix, int target);
+    //No.75
+    void sortColors(std::vector<int>& nums);
 private:
     std::vector<std::string> result;
 };
