@@ -16,4 +16,5 @@ int main()
     std::vector<std::vector<int>> vv;
     vv.push_back(a); vv.push_back(b); vv.push_back(c);
     test.searchMatrix(vv,1);
+    test.combine(4, 2);
 }

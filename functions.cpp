@@ -1193,3 +1193,27 @@ void LeetFunc::sortColors(std::vector<int>& nums)
             i++;
     }
 }
+
+void LeetFunc::combine(std::vector<std::vector<int>> &vvans, std::vector<int> &vans,int start, int n, int k)
+{
+    if (k == 0)
+    {
+        vvans.push_back(vans);
+        return;
+    }
+
+    while (start <= n)
+    {
+        vans.push_back(start);
+        combine(vvans, vans, ++start, n, k - 1);
+        vans.pop_back();
+    }
+}
+
+std::vector<std::vector<int>> LeetFunc::combine(int n, int k)
+{
+    std::vector<std::vector<int>> vvans;
+    std::vector<int> vans;
+    combine(vvans, vans, 1, n, k);
+    return vvans;
+}

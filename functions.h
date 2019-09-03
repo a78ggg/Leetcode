@@ -129,6 +129,9 @@ public:
     bool searchMatrix(std::vector<std::vector<int>>& matrix, int target);
     //No.75
     void sortColors(std::vector<int>& nums);
+    //No.77
+    void combine(std::vector<std::vector<int>> &vvans, std::vector<int> &vans,int start, int n, int k);
+    std::vector<std::vector<int>> combine(int n, int k);
 private:
     std::vector<std::string> result;
 };
