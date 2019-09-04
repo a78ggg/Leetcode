@@ -132,6 +132,9 @@ public:
     //No.77
     void combine(std::vector<std::vector<int>> &vvans, std::vector<int> &vans,int start, int n, int k);
     std::vector<std::vector<int>> combine(int n, int k);
+    //No.78
+    void subsets(std::vector<std::vector<int>> &vvans, std::vector<int>& vans, std::vector<int>& nums, int start);
+    std::vector<std::vector<int>> subsets(std::vector<int>& nums);
 private:
     std::vector<std::string> result;
 };

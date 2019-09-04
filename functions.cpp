@@ -1217,3 +1217,23 @@ std::vector<std::vector<int>> LeetFunc::combine(int n, int k)
     combine(vvans, vans, 1, n, k);
     return vvans;
 }
+
+void LeetFunc::subsets(std::vector<std::vector<int>>& vvans, std::vector<int>& vans, std::vector<int>& nums, int start)
+{
+    while (start < nums.size())
+    {
+        vans.push_back(nums[start++]);
+        vvans.push_back(vans);
+        subsets(vvans, vans, nums, start);
+        vans.pop_back();
+    }
+}
+
+std::vector<std::vector<int>> LeetFunc::subsets(std::vector<int>& nums)
+{
+    std::vector<std::vector<int>> vvans;
+    std::vector<int> vans;
+    subsets(vvans, vans, nums, 0);
+    vvans.push_back(std::vector<int>());
+    return vvans;
+}
