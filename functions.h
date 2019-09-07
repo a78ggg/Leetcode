@@ -135,6 +135,9 @@ public:
     //No.78
     void subsets(std::vector<std::vector<int>> &vvans, std::vector<int>& vans, std::vector<int>& nums, int start);
     std::vector<std::vector<int>> subsets(std::vector<int>& nums);
+    //No.79
+    bool adjacentSearch(std::vector<std::vector<char>>& board, const std::string& word, int i, int j, int index);
+    bool exist(std::vector<std::vector<char>>& board, std::string word);
 private:
     std::vector<std::string> result;
 };
