@@ -1267,3 +1267,30 @@ bool LeetFunc::exist(std::vector<std::vector<char>>& board, std::string word)
     }
     return false;
 }
+
+ListNode * LeetFunc::deleteDuplicates(ListNode * head)
+{
+    ListNode preHead(-1);
+    preHead.next = head;
+    ListNode *pre = &preHead;
+    ListNode *cur = pre->next;
+
+    while (cur)
+    {
+        ListNode *nex = cur->next;
+        
+        if (nex && cur->val == nex->val)
+        {
+            while (nex && cur->val == nex->val)
+                nex = nex->next;
+            cur = nex;
+            pre->next = cur;
+        }
+        else
+        {
+            pre = cur;
+            cur = nex;
+        }
+    }
+    return preHead.next;
+}

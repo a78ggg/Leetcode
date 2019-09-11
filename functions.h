@@ -138,6 +138,8 @@ public:
     //No.79
     bool adjacentSearch(std::vector<std::vector<char>>& board, const std::string& word, int i, int j, int index);
     bool exist(std::vector<std::vector<char>>& board, std::string word);
+    //No.82
+    ListNode* deleteDuplicates(ListNode* head);
 private:
     std::vector<std::string> result;
 };
