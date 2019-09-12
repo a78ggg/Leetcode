@@ -140,6 +140,8 @@ public:
     bool exist(std::vector<std::vector<char>>& board, std::string word);
     //No.82
     ListNode* deleteDuplicates(ListNode* head);
+    //No.83
+    ListNode* deleteDuplicates_2(ListNode* head);
 private:
     std::vector<std::string> result;
 };
