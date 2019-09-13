@@ -142,6 +142,8 @@ public:
     ListNode* deleteDuplicates(ListNode* head);
     //No.83
     ListNode* deleteDuplicates_2(ListNode* head);
+    //No.84
+    int largestRectangleArea(std::vector<int>& heights);
 private:
     std::vector<std::string> result;
 };

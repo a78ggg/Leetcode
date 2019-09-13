@@ -1306,3 +1306,20 @@ ListNode * LeetFunc::deleteDuplicates_2(ListNode * head)
     }
     return head;
 }
+
+int LeetFunc::largestRectangleArea(std::vector<int>& heights)
+{
+    //from i point , expand left and right to find max Area
+    int maxA = 0;
+    for (int i = 0; i < heights.size(); i++)
+    {
+        int left = i, right = i;
+        int curH = heights[i];
+        while (left >= 0 && heights[left] >= curH)
+            left--;
+        while (right < heights.size() && heights[right] >= curH)
+            right++;
+        maxA = std::max(maxA, curH*(right - left - 1));
+    }
+    return maxA;
+}
