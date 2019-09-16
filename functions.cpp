@@ -1323,3 +1323,27 @@ int LeetFunc::largestRectangleArea(std::vector<int>& heights)
     }
     return maxA;
 }
+
+std::vector<std::vector<int>> LeetFunc::subsetsWithDup(std::vector<int>& nums)
+{
+    std::vector<std::vector<int>> vvans = {{}};
+    std::sort(nums.begin(), nums.end());
+    for (int i = 0; i < nums.size();)
+    {
+        int count = 0;
+        while (count + i < nums.size() && nums[count + i] == nums[i])
+            count++;
+        int previousN = vvans.size();
+        for (int j = 0; j < previousN; j++)
+        {
+            std::vector<int> vans = vvans[j];
+            for (int k = 0; k < count; k++)
+            {
+                vans.push_back(nums[i]);
+                vvans.push_back(vans);
+            }
+        }
+        i += count;
+    }
+    return vvans;
+}

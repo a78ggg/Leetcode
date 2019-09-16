@@ -144,6 +144,8 @@ public:
     ListNode* deleteDuplicates_2(ListNode* head);
     //No.84
     int largestRectangleArea(std::vector<int>& heights);
+    //No.90
+    std::vector<std::vector<int>> subsetsWithDup(std::vector<int>& nums);
 private:
     std::vector<std::string> result;
 };
