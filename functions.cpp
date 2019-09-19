@@ -1347,3 +1347,20 @@ std::vector<std::vector<int>> LeetFunc::subsetsWithDup(std::vector<int>& nums)
     }
     return vvans;
 }
+
+void LeetFunc::inorder(TreeNode * root, std::vector<int>& vans)
+{
+    if (!root)
+        return;
+
+    inorder(root->left, vans);
+    vans.push_back(root->val);
+    inorder(root->right, vans);
+}
+
+std::vector<int> LeetFunc::inorderTraversal(TreeNode * root)
+{
+    std::vector<int> vans;
+    inorder(root, vans);
+    return vans;
+}

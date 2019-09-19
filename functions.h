@@ -13,6 +13,13 @@ struct ListNode {
     ListNode(int x) : val(x), next(NULL) {}
 };
 
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
 class LeetFunc
 {
 public:
@@ -146,6 +153,9 @@ public:
     int largestRectangleArea(std::vector<int>& heights);
     //No.90
     std::vector<std::vector<int>> subsetsWithDup(std::vector<int>& nums);
+    //No.94
+    void inorder(TreeNode* root, std::vector<int> &vans);
+    std::vector<int> inorderTraversal(TreeNode* root);
 private:
     std::vector<std::string> result;
 };
