@@ -1364,3 +1364,39 @@ std::vector<int> LeetFunc::inorderTraversal(TreeNode * root)
     inorder(root, vans);
     return vans;
 }
+
+std::vector<TreeNode*> LeetFunc::genTrees(int start, int end)
+{
+    std::vector<TreeNode*> vans;
+
+    if (start > end)
+    {
+        vans.push_back(NULL);
+        return vans;
+    }
+
+    for (int i = start; i <= end; i++)
+    {
+        std::vector<TreeNode*> left = genTrees(start, i - 1);
+        std::vector<TreeNode*> right = genTrees(i + 1, end);
+        for (TreeNode* lnode : left)
+        {
+            for (TreeNode* rnode : right)
+            {
+                TreeNode* root = new TreeNode(i);
+                root->left = lnode;
+                root->right = rnode;
+                vans.push_back(root);
+            }
+        }
+    }
+    return vans;
+}
+
+std::vector<TreeNode*> LeetFunc::generateTrees(int n)
+{
+    if(n ==0)
+        return std::vector<TreeNode*>();
+
+    return genTrees(1, n);
+}

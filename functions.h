@@ -156,6 +156,9 @@ public:
     //No.94
     void inorder(TreeNode* root, std::vector<int> &vans);
     std::vector<int> inorderTraversal(TreeNode* root);
+    //No.95
+    std::vector<TreeNode*> genTrees(int start, int end);
+    std::vector<TreeNode*> generateTrees(int n);
 private:
     std::vector<std::string> result;
 };
